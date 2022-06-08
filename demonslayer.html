@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anime webpage</title>
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+  </head>
+  <body>
+    <header>
+      <div id="progressbar"></div>
+      <div id="scrollPath"></div>
+      <audio controls autoplay loop >
+        <source src="audio/tido kang.mp3" type="audio/mpeg" />
+      </audio>
+      <ul>
+          <div class="div box">
+        <div class="div eye"></div>
+          <div class="div eye"></div>
+      </div>
+          <script>
+            document.querySelector('body').addEventListener('mousemove',eyeball);
+            function eyeball(){
+              const eye = document.querySelectorAll('.eye');
+              eye.forEach(function(eye){
+                let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+
+                let radian = Math.atan2(event.pageX - x, event.pageY - y);
+                let rotation = (radian * (180 / Math.PI) * -1) + 270;
+                eye.style.transform = "rotate("+rotation+"deg)"
+              });
+            }
+          </script>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="top5.html">My Top 5</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <img src="images/demonslayerwall.jpg" alt="Demonslayer picture" />
+    </section>
+    <div class="tekst1" id="tekst1">
+      <h1>About Demon slayer</h1>
+      <p>
+        A family is attacked by demons and only two members survive.        <p>
+          Tanjiro and his sister Nezuko, who is turning into a demon slowly.
+        </p>
+        <p>
+        Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.
+        </p>
+      </p>
+  <h1>Quality Impressions</h1>
+      <p>Demon Slayer has been praised for its gorgeous animation,
+      <p> Particularly its dynamic action sequences where every frame feels
+      <p> like a piece of art. The stunning visuals are a credit to 
+      <p> ufotable, The animation studio behind the anime adaptation.23 apr. 2021
+      <p>
+      </p>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Top 5</title>
+    <link rel="stylesheet" type="text/css" href="style3.css" />
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <section>
+      <ul>
+        <li><h1>1.Dragon ball</h1></li>
+        <img src="images/dragonball.jpg"alt="picture of dragon ball"/>
+        <li><h1>2.Naruto</h1></li>
+        <img src="images/n.jpg" alt="Picture of naruto" />
+        <li><h1>3.Hunter x Hunter</h1></li>
+        <img
+          src="images/hunter x hunter.jpg"
+          alt="picture of hunter x hunter"
+        />
+        <li><h1>4.Demon Slayer</h1></li>
+        <img src="images/demonslayer.jpg" alt="picture of demonslayer" />
+        <li><h1>5.Attack On Titan</h1></li>
+        <img src="images/attack on titan.jpg" alt="picture of aot" />
+      </ul>
+    </section>
+    <header>
+      <div id="progressbar"></div>
+      <div id="scrollPath"></div>
+      <audio controls autoplay loop>
+        <source src="audio/tido kang.mp3" type="audio/mpeg" />
+      </audio>
+      <ul>
+        <div class="div box">
+          <div class="div eye"></div>
+          <div class="div eye"></div>
+        </div>
+        <script>
+          document.querySelector("body").addEventListener("mousemove", eyeball);
+          function eyeball() {
+            const eye = document.querySelectorAll(".eye");
+            eye.forEach(function (eye) {
+              let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+              let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+
+              let radian = Math.atan2(event.pageX - x, event.pageY - y);
+              let rotation = radian * (180 / Math.PI) * -1 + 270;
+              eye.style.transform = "rotate(" + rotation + "deg)";
+            });
+          }
+        </script>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="demonslayer.html">My Fav Anime</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+    </div>
+  </body>
+</html>

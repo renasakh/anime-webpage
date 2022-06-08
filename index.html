@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anime webpage</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="progressbar"></div>
+      <div id="scrollPath"></div>
+      <audio controls autoplay loop >
+        <source src="audio/tido kang.mp3" type="audio/mpeg" />
+      </audio>
+      <ul>
+          <div class="div box">
+        <div class="div eye"></div>
+          <div class="div eye"></div>
+      </div>
+          <script>
+            document.querySelector('body').addEventListener('mousemove',eyeball);
+            function eyeball(){
+              const eye = document.querySelectorAll('.eye');
+              eye.forEach(function(eye){
+                let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+
+                let radian = Math.atan2(event.pageX - x, event.pageY - y);
+                let rotation = (radian * (180 / Math.PI) * -1) + 270;
+                eye.style.transform = "rotate("+rotation+"deg)"
+              });
+            }
+          </script>
+        <li><a href="demonslayer.html">My Fav Anime</a></li>
+        <li><a href="top5.html">My Top 5</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <section>
+      <img src="images/laggas.jpg" alt="skyline with moon" />
+    </section>
+    <div class="tekst1" id="tekst1">
+      <h1>Short Story</h1>
+      <p>
+        The fog surrounding me was thick, The air was muggy and all sense of the
+        world was gone. 
+         As I walked further into the woods it was difficult to
+        know where I was going and when I would get there.
+       Fear was pounding my
+        heart, but there was no going back. I had to keep going. I pushed
+        forward struggling to breathe . The track seemed to be endless. There
+        was no where to go. Lost in the middle of a cold forest with no food,
+        shelter, or heat. That was when I started to panic.<br /><br />
+        To be continued....
+      </p>
+  </body>
+</html>
